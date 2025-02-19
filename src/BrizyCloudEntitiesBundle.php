@@ -28,7 +28,7 @@ final class BrizyCloudEntitiesBundle extends Bundle
     private function configureDoctrineExtension(ContainerBuilder $container): void
     {
         if (class_exists(DoctrineOrmMappingsPass::class)) {
-            $namespaces = ['Brizy\Bundle\ApiEntitiesBundle\Entity'];
+            $namespaces = ['Brizy\Bundle\CloudEntitiesBundle\Entity'];
             $directories = [realpath(__DIR__ . '/Entity')];
             $managerParameters = [BrizyCloudEntitiesBundleExtension::DOCTRINE_MANAGER];
 
