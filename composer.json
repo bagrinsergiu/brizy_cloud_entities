@@ -1,0 +1,48 @@
+{
+  "name": "bagrinsergiu/brizy-cloud-entities",
+  "type": "symfony-bundle",
+  "require": {
+    "php": ">=7.2|8.*",
+    "ext-ctype": "*",
+    "ext-curl": "*",
+    "ext-iconv": "*",
+    "ext-json": "*",
+    "doctrine/orm": "^2||^3",
+    "doctrine/doctrine-bundle": "^1||^2",
+    "symfony/config": "*",
+    "gedmo/doctrine-extensions": "^2||^3",
+    "symfony/http-kernel": "^3 || ^4 || ^5 || ^6 || ^7",
+    "doctrine/annotations": "^2.0"
+  },
+  "config": {
+    "platform": {
+      "php": "8.1"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Brizy\\Bundle\\CloudEntitiesBundle\\": "src/",
+      "Brizy\\Bundle\\CloudEntitiesBundle\\TestFactory\\": "tests/Factory/"
+    },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Brizy\\Bundle\\CloudEntitiesBundle\\Tests\\": "tests/"
+    },
+    "exclude-from-classmap": [
+      "/Factory/"
+    ]
+  },
+   "extra": {
+    "symfony": {
+      "allow-contrib": false,
+      "require": "7.2.*"
+    }
+  },
+  "require-dev": {
+    "rector/rector": "^2.0"
+  }
+}
