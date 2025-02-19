@@ -1,4 +1,6 @@
 <?php
+namespace Brizy\Bundle\CloudEntitiesBundle;
+
 use Brizy\Bundle\CloudEntitiesBundle\DependencyInjection\BrizyCloudEntitiesBundleExtension;
 use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
