@@ -14,7 +14,7 @@
     "symfony/http-kernel": "^3 || ^4 || ^5 || ^6 || ^7",
     "doctrine/annotations": "^2.0",
     "symfony/security-bundle": "^6.4",
-    "symfony/security-core": "^6.4 || ^7.0"
+    "symfony/security-core": "^6 || ^7"
   },
   "config": {
     "platform": {
@@ -40,8 +40,7 @@
   },
    "extra": {
     "symfony": {
-      "allow-contrib": false,
-      "require": "7.2.*"
+      "allow-contrib": false
     }
   },
   "require-dev": {
