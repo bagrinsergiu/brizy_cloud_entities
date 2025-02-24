@@ -9,7 +9,6 @@ use Brizy\Bundle\CloudEntitiesBundle\Entity\Common\Traits\NodeableEntity;
 use Brizy\Bundle\CloudEntitiesBundle\Utils\Random;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\UniqueConstraint;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -363,7 +362,7 @@ class User implements UserInterface
      *
      * @return string[] The user roles
      */
-    public function getRoles()
+    public function getRoles(): array
     {
         return [];
     }
@@ -403,9 +402,9 @@ class User implements UserInterface
         return null;
     }
 
-    public function getUserIdentifier()
+    public function getUserIdentifier(): string
     {
-        return $this->getId();
+        return (string)$this->getId();
     }
 
     /**
