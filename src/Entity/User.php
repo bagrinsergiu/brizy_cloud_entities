@@ -12,7 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
-use Trikoder\Bundle\OAuth2Bundle\Model\Client;
 
 #[ORM\Table(name: 'user')]
 #[ORM\Entity(repositoryClass: \Brizy\Bundle\CloudEntitiesBundle\Repository\UserRepository::class, readOnly: true)]
@@ -34,14 +33,6 @@ class User implements UserInterface
     #[ORM\JoinColumn(name: 'application_id', referencedColumnName: 'id', nullable: true)]
     protected $application;
 
-    /**
-     * OAuth Client to access the CmsApplication api
-     *
-     * @var Client
-     */
-    #[ORM\ManyToOne(targetEntity: \Trikoder\Bundle\OAuth2Bundle\Model\Client::class, cascade: ['persist', 'remove'])]
-    #[ORM\JoinColumn(name: 'cms_api_client_id', referencedColumnName: 'identifier', nullable: true)]
-    protected $cms_api_client;
 
     /**
      * @var int
@@ -134,20 +125,6 @@ class User implements UserInterface
         return $this;
     }
 
-    /**
-     * @return Client
-     */
-    public function getCmsApiClient(): ?Client
-    {
-        return $this->cms_api_client;
-    }
-
-    public function setCmsApiClient(?Client $cms_api_client): User
-    {
-        $this->cms_api_client = $cms_api_client;
-
-        return $this;
-    }
 
     /**
      * @return int
